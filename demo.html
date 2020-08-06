@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Rock - Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://www.holacases.com/res/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.holacases.com/res/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://www.holacases.com/res/bootstrap-social.css">   
+
+
+</head>
+
+
+<body style="height:700px">
+
+<div class="container text-center" id="preview">
+
+  <div class="col">
+
+
+    <div class="text-center">
+      
+      <h4 id="greeting1-p2-preview">Hey There!</h4>  
+
+      <h5 id="greeting2-p2-preview">I'm The Rock.<br>Founder @ Teremana</h5>        
+
+     <img class="img-thumbnail mb-2" id="image-p2-preview" src="https://www.holacases.com/res/therock.jpg" style="max-height:30vh;">  
+ 
+     <p class="text-break text-wrap" id="intro-p2-preview">What's the key to success? The key is, there is no key. Be humble, hungry, and the hardest worker in any room.</p>     
+ 
+     <a class="btn btn-outline-light btn-block text-dark border-dark mb-2" id="contact-p2-preview" onclick="get_vcard()" target="_blank" rel="noopener nofollow external noreferrer"><i class="fa fa-user"></i>+  Add Phone Contact</a>
+
+      <div class="row no-gutters">
+      <div class="col mb-2" id="weblink1-container-p2-preview">
+        <a class="btn btn-primary btn-block mr-1" style="background-color:#337AB7" id="weblink1-p2-preview" href="https://teremana.com/" target="_blank" rel="noopener nofollow external noreferrer">Teremana Tequila</a>
+      </div>
+      <div class="col mb-2" id="weblink2-container-p2-preview">
+        <a class="btn btn-primary btn-block ml-1" style="background-color:#337AB7" id="weblink2-p2-preview" href="https://www.imdb.com/name/nm0425005/" target="_blank" rel="noopener nofollow external noreferrer">My IMDB Page</a>          
+      </div>
+      </div>
+
+      <div class="row no-gutters">
+        <div class="col mb-2" id="weblink3-container-p2-preview">
+          <a class="btn btn-info btn-block mr-1" id="weblink3-p2-preview" href="https://en.wikipedia.org/wiki/Dwayne_Johnson" target="_blank" rel="noopener nofollow external noreferrer">Wiki Page</a>
+        </div>
+        <div class="col mb-2" id="weblink4-container-p2-preview">
+          <a class="btn btn-info btn-block ml-1" id="weblink4-p2-preview" href="https://www.wwe.com/superstars/the-rock" target="_blank" rel="noopener nofollow external noreferrer">WWE Profile</a>          
+        </div>
+        </div>      
+        
+
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center text-center">
+
+
+      <div class="col-xs-3 p-2" id="twitter-container-p2-preview"> <a href="https://twitter.com/TheRock" class="btn btn-social-icon btn-lg btn-twitter" id="twitter-p2-preview" target="_blank" rel="noopener nofollow external noreferrer"><span class="fa fa-twitter"></span></a></div>
+
+      <div class="col-xs-3 p-2" id="instagram-container-p2-preview"> <a href="https://www.instagram.com/therock" class="btn btn-social-icon btn-lg btn-instagram" id="instagram-p2-preview" target="_blank" rel="noopener nofollow external noreferrer"><span class="fa fa-instagram"></span></a></div>
+
+      <div class="col-xs-3 p-2" id="snapchat-container-p2-preview"> <a href="https://www.snapchat.com/add/therock" class="btn btn-social-icon btn-lg btn-snapchat" id="snapchat-p2-preview" target="_blank" rel="noopener nofollow external noreferrer"><span class="fa fa-snapchat-ghost"></span></a></div>
+
+      <div class="col-xs-3 p-2" id="youtube-container-p2-preview"> <a href="https://www.youtube.com/user/therock" class="btn btn-social-icon btn-lg btn-youtube" id="youtube-p2-preview" target="_blank" rel="noopener nofollow external noreferrer"><span class="fa fa-youtube"></span></a></div>
+  
+      <div class="col-xs-3 p-2" id="facebook-container-p2-preview"> <a href="https://www.facebook.com/DwayneJohnson/" class="btn btn-social-icon btn-lg btn-facebook" id="facebook-p2-preview" target="_blank" rel="noopener nofollow external noreferrer"><span class="fa fa-facebook"></span></a></div>   
+      
+      <div class="col-xs-3 p-2" id="reddit-container-p2-preview"> <a href="https://www.reddit.com/r/therock/" class="btn btn-social-icon btn-lg btn-reddit" id="reddit-p2-preview" target="_blank" rel="noopener nofollow external noreferrer"><span class="fa fa-reddit"></span></a></div>   
+
+      <div class="col-xs-3 p-2" id="pinterest-container-p2-preview"> <a href="https://www.pinterest.com/hottredhead78/dwayne-johnson/" class="btn btn-social-icon btn-lg btn-pinterest" id="pinterest-p2-preview" target="_blank" rel="noopener nofollow external noreferrer"><span class="fa fa-pinterest"></span></a></div>   
+
+
+      <div class="col-xs-3 p-2" id="quora-container-p2-preview"> <a href="https://www.quora.com/topic/Dwayne-The-Rock-Johnson-actor" class="btn btn-social-icon btn-lg btn-quora" id="quora-p2-preview" target="_blank" rel="noopener nofollow external noreferrer"><span class="fa fa-quora"></span></a></div>
+
+      <div class="col-xs-3 p-2" id="tumblr-container-p2-preview"> <a href="https://www.tumblr.com/tagged/the-rock" class="btn btn-social-icon btn-lg btn-tumblr" id="tumblr-p2-preview" target="_blank" rel="noopener nofollow external noreferrer"><span class="fa fa-tumblr"></span></a></div>
+      
+    </div>
+
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+        <a class="btn btn-block text-white" target="_blank" href="https://www.holacases.com">Powered by HolaCase</a>
+      </nav>
+      
+  </div>
+
+  
+</div>
+
+
+</body>
+
+<script>
+  function get_vcard()
+    {
+     var vc_content ="BEGIN:VCARD\nVERSION:3.0\n";
+  
+     vc_content = vc_content.concat("N:" + "Johnson" + ";" + "Dwayne Rock" + ";;" +"\n");
+     vc_content = vc_content.concat("FN:" + "Jonson" + " " + "Dwayne Rock" +"\n");
+     vc_content = vc_content.concat("ORG:" + "Teremana" +"\n");
+     vc_content = vc_content.concat("TITLE:" + "Actor & Entrepreneur" +"\n");
+     vc_content = vc_content.concat("TEL;TYPE=CELL:" + "+1-0000000000" +"\n");
+     vc_content = vc_content.concat("EMAIL;TYPE=WORK:" + "contact@therock.com" +"\n");   
+     vc_content = vc_content.concat("URL:" + "https://www.facebook.com/DwayneJohnson/" +"\n");     
+     vc_content = vc_content.concat("ADR;TYPE=WORK:" +";;" + "21 street" + ";" + "Los Angeles" + ";" + "CA" + ";" + "00000" + ";" + "USA"  +"\n");       
+     
+     vc_content = vc_content.concat("END:VCARD");    
+     
+     downloadVcf("TheRock.vcf",vc_content);
+    }
+  </script>
+
+<script>
+  function downloadVcf(filename, data) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/vcard;charset=utf-8,' + encodeURIComponent(data));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+  }
+  </script>
+
+
+</html>
+
+  
