@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login - HolaCase</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+  <link rel="stylesheet" href="https://www.holacases.com/res/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.holacases.com/res/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://www.holacases.com/res/bootstrap-social.css">   
+
+</head>
+
+<body>  
+
+<div class="container" id="secure-login">
+
+    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom shadow-sm mb-2">
+    <a class="navbar-brand text-dark" href="https://www.holacases.com"><b>HolaCase</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNav">
+
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="https://www.holacases.com/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="https://www.holacases.com/faqs-holacase/index.html">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="https://www.holacases.com/secure-login/index.html">Login / Signup</a>
+            </li>
+
+          </ul>
+    </div>
+    </nav>
+
+
+  <br/><br/>
+  <div id="login-display" style="display: none;">
+    <div class="text-center">Please log in to customize your profile, download wallpapers / QR codes, order phone cases and more.</div>
+    <br/><br/><br/>
+    <div id="firebaseui-auth-container"></div>
+    
+  </div>
+
+  <div class="text-center" id ="verification-display" style="display: none;">
+    Please check your inbox & click the email verification link to continue.<br/><br/>
+    <a class="btn btn-primary text-white" id="resend-email-button">Re-send verification email</a>
+  </div>
+  
+</div>
+
+  <!--Success Modal -->
+  <div class="modal fade" id="send-button-success-modal">
+    <div class="modal-dialog modal-sm modal-dialog-centered text-center">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="text-center">Verification Email Sent Successfully. Please check your inbox for the verification link.</h4>
+        </div>
+        
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success btn-block" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<!-- Failure Modal -->
+<div class="modal fade" id="failure-modal">
+  <div class="modal-dialog modal-sm modal-dialog-centered text-center">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="text-center">Error! Please try again in a minute or contact support.</h4>
+      </div>
+      
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</body>
+
+
+<script src="conf.js"></script>
+
+<!--  Initialize Auth UI & take action based on login state-->
+<script>
+  // UI config.
+  var uiConfig = 
+        {
+        signInSuccessUrl: '#',
+          signInOptions: [
+
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID],
+
+          tosUrl: 'https://www.holacases.com/tos/index.html',
+          privacyPolicyUrl: function() { window.location.assign('https://www.holacases.com/tos/index.html');}
+        };
+
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      ui.start('#firebaseui-auth-container', uiConfig);
+
+      firebase.auth().onAuthStateChanged(function(user) {
+       
+      if (user && user.emailVerified) { window.location.href="https://www.holacases.com/secure-login/dashboard.html"; } 
+      else if (user) 
+            {
+            var result = send_verification_email();
+            document.getElementById('login-display').style.display = "none";
+            document.getElementById('verification-display').style.display = "block";
+            }
+      else {
+            document.getElementById('login-display').style.display = "block";
+            document.getElementById('verification-display').style.display = "none";
+           }
+    });
+  </script>
+
+
+<!--function to send verification email-->
+<script>
+function send_verification_email(){ return firebase.auth().currentUser.sendEmailVerification(); }
+</script>
+
+
+<!-- detect button click for re-sending verification email-->
+<script>
+  $(document).ready(function(){
+    $(document.getElementById('resend-email-button')).click(async function(){
+
+      try{
+          const result = await send_verification_email();
+          
+          $("#send-button-success-modal").modal();         
+
+          return(result);
+      }
+      catch(err)
+       {
+          $("#failure-modal").modal();
+          return(err);
+       }
+
+    });
+  });
+</script>
+
+
+</html>
+
+  
