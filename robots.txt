@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /view/index.html
+Disallow: /secure-login/dashboard.html
+
+Sitemap: https://www.holacases.com/sitemap.xml

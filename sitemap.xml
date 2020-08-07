@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://www.holacases.com/</loc>
+	<lastmod>2020-08-07T09:01:05+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.holacases.com/faqs-holacase/</loc>
+	<lastmod>2020-08-07T09:01:05+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.holacases.com/secure-login/index.html</loc>
+	<lastmod>2020-08-07T09:01:08+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.holacases.com/index.html</loc>
+	<lastmod>2020-08-07T09:01:08+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.holacases.com/faqs-holacase/index.html</loc>
+	<lastmod>2020-08-07T09:01:08+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.holacases.com/demo.html</loc>
+	<lastmod>2020-08-07T09:01:08+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.holacases.com/demo2.html</loc>
+	<lastmod>2020-08-07T09:01:08+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+</urlset>
