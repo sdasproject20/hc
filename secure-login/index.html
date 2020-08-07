@@ -114,10 +114,7 @@
   var uiConfig = 
         {
         signInSuccessUrl: '#',
-          signInOptions: [
-
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            firebase.auth.EmailAuthProvider.PROVIDER_ID],
+          signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
 
           tosUrl: 'https://www.holacases.com/tos/index.html',
           privacyPolicyUrl: function() { window.location.assign('https://www.holacases.com/tos/index.html');}
