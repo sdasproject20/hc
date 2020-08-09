@@ -1041,20 +1041,20 @@
         var Text_Line_3 = String(document.getElementById("text-line-3").value);
 
         browser_ctx.fillStyle = "black";
-        browser_ctx.font =browserCanvas.width/15 + "px Arial";
+        browser_ctx.font =browserCanvas.width/14 + "px Arial";
         browser_ctx.textAlign = "center";
         browser_ctx.fillText(Text_Line_1,browserCanvas.width/2,browserCanvas.height*0.60);
-        browser_ctx.font = browserCanvas.width/17 + "px Arial";
-        browser_ctx.fillText(Text_Line_2,browserCanvas.width/2,browserCanvas.height*0.64);
-        browser_ctx.fillText(Text_Line_3,browserCanvas.width/2,browserCanvas.height*0.68);
+        browser_ctx.font = browserCanvas.width/16 + "px Arial";
+        browser_ctx.fillText(Text_Line_2,browserCanvas.width/2,browserCanvas.height*0.65);
+        browser_ctx.fillText(Text_Line_3,browserCanvas.width/2,browserCanvas.height*0.69);
         
         wallpaper_ctx.fillStyle = "black";
-        wallpaper_ctx.font =wallpaperCanvas.width/15 + "px Arial";
+        wallpaper_ctx.font =wallpaperCanvas.width/14 + "px Arial";
         wallpaper_ctx.textAlign = "center";
         wallpaper_ctx.fillText(Text_Line_1,wallpaperCanvas.width/2,wallpaperCanvas.height*0.60);
-        wallpaper_ctx.font = wallpaperCanvas.width/17 + "px Arial";
-        wallpaper_ctx.fillText(Text_Line_2,wallpaperCanvas.width/2,wallpaperCanvas.height*0.64);
-        wallpaper_ctx.fillText(Text_Line_3,wallpaperCanvas.width/2,wallpaperCanvas.height*0.68);
+        wallpaper_ctx.font = wallpaperCanvas.width/16 + "px Arial";
+        wallpaper_ctx.fillText(Text_Line_2,wallpaperCanvas.width/2,wallpaperCanvas.height*0.65);
+        wallpaper_ctx.fillText(Text_Line_3,wallpaperCanvas.width/2,wallpaperCanvas.height*0.69);
       
         document.getElementById("download-wallpaper").href = wallpaperCanvas.toDataURL("image/png");
         document.getElementById("download-qr").href = qrCanvas.toDataURL("image/png");
